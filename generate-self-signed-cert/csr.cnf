@@ -1,0 +1,20 @@
+[req]
+default_bits = 2048
+distinguished_name = dn
+prompt             = no
+
+[dn]
+C="US"
+ST="NC"
+L="Dummy"
+O="NULL"
+OU="Service"
+emailAddress="yourmail@mail.com"
+CN="yourdomain.com"
+
+[req_ext]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.0 = precompiler.github.com
+DNS.1 = *.github.com
