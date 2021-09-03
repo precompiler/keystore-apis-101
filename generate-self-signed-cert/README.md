@@ -14,7 +14,7 @@ openssl genrsa -des3 -out server-key.pem 2048
 openssl req -new -config csr.cnf -key server-key.pem -out sr.csr
 
 # create server cert
-openssl x509 -req -days 365 -in sr.csr -CA ca-cert.pem -CAkey ca-key.pem -CAcreateserial -out server-cert.pem
+openssl x509 -req -days 365 -in sr.csr -CA ca-cert.pem -CAkey ca-key.pem -CAcreateserial -out server-cert.pem -extfile v3.ext
 
 # convert pem to pkcs
 openssl pkcs12 -export -in server-cert.pem -inkey server-key.pem  -out server.p12
